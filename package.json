@@ -1,0 +1,17 @@
+{
+  "name": "edsc-d3",
+  "version": "1.0.0",
+  "description": "Using d3 package for geospatial data-visualization",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "ed olivares",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.159.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.10"
+  }
+}
