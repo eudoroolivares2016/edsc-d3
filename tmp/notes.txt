@@ -1,0 +1,3 @@
+The camera in three.js can end up being on top of the object you add into it
+
+that's why that z position needs to be larger so that we step outside of the sphere

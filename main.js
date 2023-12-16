@@ -1,8 +1,18 @@
 import * as THREE from 'three';
-
+1
 function animate() {
 	requestAnimationFrame( animate );
+	sphere.rotation.x += 0.01;
+	sphere.rotation.y += 0.01;
 	renderer.render( scene, camera );
+}
+
+
+function createEarthTextture (imagePath) {
+
+	const worldTexttureLoad = new THREE.TextureLoader().load(imagePath);
+
+	return worldTexttureLoad;
 }
 
 const scene = new THREE.Scene();
@@ -15,11 +25,14 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+const geometry = new THREE.SphereGeometry( 15, 32, 16 ); 
+const material = new THREE.MeshBasicMaterial( { map: createEarthTextture('./assets/earth.jpeg') } );
 
-camera.position.z = 5;
+
+// Instantiate ovjects into the scence
+const sphere = new THREE.Mesh( geometry, material );
+scene.add( sphere );
+
+camera.position.z = 50;
 
 animate();
