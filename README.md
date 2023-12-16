@@ -1,0 +1,1 @@
+This is base for a project to use CMR onto a three.js canvas obj
